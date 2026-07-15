@@ -17,30 +17,41 @@ class Funcionario:
 
 
 class Departamento:
-    def __init__(self,nome, funcionario):
+    def __init__(self,nome): #uncionarios nao precisa esta no paramentro ppois é uma lista vazia
      self.nome = nome
-     funcionario = []
+     self.funcionarios= []
    
-    def adicionar_funcionários(self):
-    
-    def remover_funcionario(self):
-       
-    def calcular_media(self):
+    def adicionar_funcionários(self,funcionario):
+       self.funcionarios.append(funcionario)
        
     def listar_funcionarios(self):
+       if not self.funcionarios:
+          print("Nenhum funcionario neste departamento")
+       else:
+          for f in self.funcionarios:
+             print(f"{f.nome} - R$ {f.salario:.2f}")
+    def media_salarial(self):
+       if not self.funcionarios:
+        return 0
+       soma = 0
+       for f in self.funcionarios:
+          soma += f.salario
+          return soma / len (self.funcionarios)
+       
 
 def main():
-    
+    funcionarios= []
+    departamentos = []
     
 
     while True:
         print("\n===MENU===")
-        print("\n1 - Criar departamento")
-        print("2 - Criar funcionários")
+        print("\n1 - Criar funcionario")
+        print("2 - Criar departamento")
         print("3 - Adicionar funcionários ao departamento")
         print("4 - Listar funcionários")
         print("5 - Mostrar média salarial")
-        print("5 - Sair\n")
+        print("6- Sair\n")
 
 
         escolha = input("Escolha uma opção:")
