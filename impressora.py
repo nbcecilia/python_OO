@@ -76,7 +76,7 @@ def main():
               if escolha.isdigit():
                  escolha = int(escolha)
                  if 1<= escolha <=len(documentos):
-                    Impressora.imprimir(documentos{escolha-1})
+                    impressora.imprimir(documentos{escolha-1})
                  else:
                     print("\n Numero Invalido!")
               else:
